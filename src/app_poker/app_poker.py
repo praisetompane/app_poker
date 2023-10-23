@@ -2,7 +2,7 @@ import logging
 import sys
 from logging import log
 from flask import Flask
-from api.poker_resource import api_poker
+from app_poker.api.poker_resource import api_poker
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 

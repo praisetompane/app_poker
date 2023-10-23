@@ -87,6 +87,12 @@
     ```shell
     ./start_system_development.sh
     ```
+- running in VSCode:
+    - open the "Run and Debug" view:
+    - click the green play button.
+        - the server will inform you the host and port in the terminal output at the bottom.
+        - from here you debug like normal(i.e. add break points, step into code definitions, evaluate code snippets, etc)
+    ![start system output](./docs/vscode_debugging.png)
 ## git conventions:
 - **NB:** the master is locked and all changes must come through a Pull Request.
 - commit messages:
