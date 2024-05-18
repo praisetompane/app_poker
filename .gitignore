@@ -164,3 +164,5 @@ Docker.dmg
 
 # Postgres
 postgres_data
+
+.DS_Store
