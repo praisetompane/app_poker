@@ -4,8 +4,6 @@ WORKDIR /app_poker
 
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
 

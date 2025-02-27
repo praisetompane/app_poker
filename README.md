@@ -1,12 +1,14 @@
 # app_poker
 ![build status](https://github.com/praisetompane/app_poker/actions/workflows/app_poker.yaml/badge.svg)
+
+## Objectives
 - a Poker hand evaluator.
     - currently only supports High Games:
         - features:
             - calculate highest hand rank possible for a 5 card hand.
             - calculate all possible hand ranks for a 5 card hand: **response is stubbed**
 
-## project structure:
+## Project Structure
 - docs: project documentation lives in here.
 - src: production code lives in folder and is divided in the modules below:
     - app_poker: project package
@@ -36,68 +38,50 @@
 
 - utilities: any useful scripts, such as curl & postman requests, JSON payloads, software installations, etc.
 
-## setup instructions:
-1. install `python 3.11` or higher.
-    - Python download: https://www.python.org/downloads/
+## Dependencies
+- [Docker](https://docs.docker.com/get-started/)
 
-2. clone repo: 
-    ```shell
-    git git@github.com:praisetompane/app_poker.git
-    ```
-## package management:
-- install pipenv: https://pypi.org/project/pipenv/
-- to install packages into local environment:
-    ```shell
-    pipenv install
-    ```
-## run program:
-- install packages into local environment using pipenv[**only required for first run**]:
-    ```shell
-    pipenv install
-    ```
-- to start system run:
+## Setup Instructions
+- The repository is configured to use [devcontainers](https://containers.dev) for development.
+    - [Developing inside a Container](https://code.visualstudio.com/docs/devcontainers/containers)
+
+## Run Program
+- To start system run
     ```shell
     ./start_system.sh
     ```
 
-## testing:
-### unit tests:
-- to run tests:
-    - activate environment
-    ```shell
-    pipenv shell
-    ```
-    - run tests
+- Debugging
+    - To run system in debug mode
+        ```shell
+        ./start_system_development.sh
+        ```
+    - Running in VSCode
+        - open the "Run and Debug" view:
+        - click the green play button.
+            - the server will inform you the host and port in the terminal output at the bottom.
+            - from here you debug like normal(i.e. add break points, step into code definitions, evaluate code snippets, etc)
+        ![start system output](./docs/vscode_debugging.png)
+
+## Testing
+- Run unit and integration tests
     ```shell
     pytest
     ```
-        
-### end to end tests:
-- The curl request used can be found in `utilities/curl/`.
-    - example:
-    ```shell
-    ./utilities/curl/highest_rank/royal_flush.sh 
-    ```
-    ![end to end curl example](./docs/end_to_end_curl_example.png) <br>
+- Run End to End tests
+    - The curl request used can be found in `utilities/curl/`.
+        - example:
+        ```shell
+        ./utilities/curl/highest_rank/royal_flush.sh
+        ```
+        ![end to end curl example](./docs/end_to_end_curl_example.png) <br>
 
-- If Postman requests can be found in `/utilities/postman/app_poker.postman_collection.json`.
-    ![end to end postman example](./docs/end_to_end_postman_example.png)
-    - Guide for how to import into Postman: https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/
+    - If Postman requests can be found in `/utilities/postman/app_poker.postman_collection.json`.
+        ![end to end postman example](./docs/end_to_end_postman_example.png)
+        - Guide for how to import into Postman: https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/
 
-
-## development:
-- to run system in debug mode:
-    ```shell
-    ./start_system_development.sh
-    ```
-- running in VSCode:
-    - open the "Run and Debug" view:
-    - click the green play button.
-        - the server will inform you the host and port in the terminal output at the bottom.
-        - from here you debug like normal(i.e. add break points, step into code definitions, evaluate code snippets, etc)
-    ![start system output](./docs/vscode_debugging.png)
-## git conventions:
-- **NB:** the master is locked and all changes must come through a Pull Request.
+## Git Conventions
+- **NB:** the main is locked and all changes must come through a Pull Request.
 - commit messages:
     - provide concise commit messages that describe what you have done.
         ```shell
@@ -108,7 +92,8 @@
     - references: 
         - https://www.conventionalcommits.org/en/v1.0.0/
         - https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
-## demo:
+
+## Demo
 ### 0. start system output: <br>
 - output:
 ![start system output](./docs/start_system_output.png)
